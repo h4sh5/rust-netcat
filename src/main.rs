@@ -81,7 +81,7 @@ fn main() {
     opts.optflag("N", "", "Shutdown the network socket after EOF on stdin");
     let matches = match opts.parse(&args[1..]) {
         Ok(m) => m,
-        Err(f) => panic!(f.to_string()),
+        Err(f) => panic!("{}", f.to_string()),
     };
     if matches.opt_present("h") {
         print_usage(&program, opts, 0);
@@ -295,7 +295,7 @@ fn connect<'a>(
     transport: &Transport,
     listen: bool,
     //buf_netin: &Buffer,
-) -> io::Result<Box<Socket>> {
+) -> io::Result<Box<dyn Socket>> {
     Ok(match transport {
         Transport::Tcp => {
             if listen {
