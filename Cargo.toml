@@ -11,7 +11,7 @@ authors = ["Dhole <dhole@openmailbox.org>"]
 #features = [ "color" ]
 
 [dependencies]
-getopts = "0.2"
+getopts = "0.2.21"
 mio = "0.6"
 libc = "0.2"
 #enum-primitive-derive = "^0.1"
